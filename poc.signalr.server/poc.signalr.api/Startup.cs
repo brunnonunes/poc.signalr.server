@@ -38,13 +38,13 @@ namespace poc.signalr.api {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("CorsPolicy");
-
             app.UseMvc();
 
             app.UseSignalR(routes => {
                 routes.MapHub<ChatHub>("/chathub");
             });
+
+            app.UseCors("CorsPolicy");
         }
     }
 }
